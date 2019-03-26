@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Angular desde cero</span>
+</mat-toolbar>
+<nav>
+  <a mat-button color="primary" [routerLink]="'/'">Home</a>
+  <a mat-button color="primary" [routerLink]="'/mars'">Mars Rover Images</a>
+  <a mat-button color="primary" [routerLink]="'/material-demo'">Material demo</a>
+</nav>
+<router-outlet></router-outlet>
+<!-- <ed-material-demo></ed-material-demo> -->

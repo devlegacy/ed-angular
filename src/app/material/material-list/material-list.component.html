@@ -1,0 +1,101 @@
+<h3>Material list</h3>
+<div>
+  <mat-list>
+    <mat-list-item>
+      <img mat-line mat-list-avatar src="https://www.publicdomainpictures.net/pictures/80000/nahled/vintage-male-profile-silhouette.jpg"
+        alt="Profile picture">
+      <span mat-line>Luis Aviles</span>
+      <span mat-line>Cancún</span>
+    </mat-list-item>
+    <mat-list-item>
+      <img mat-line mat-list-avatar src="https://www.publicdomainpictures.net/pictures/80000/nahled/vintage-male-profile-silhouette.jpg"
+        alt="Profile picture">
+      <span mat-line>Samuel R.</span>
+      <span mat-line>Playa del carmen</span>
+    </mat-list-item>
+    <mat-list-item>
+      <img mat-line mat-list-avatar src="https://www.publicdomainpictures.net/pictures/80000/nahled/vintage-male-profile-silhouette.jpg"
+        alt="Profile picture">
+      <span mat-line>XXXXX XXXXX</span>
+      <span mat-line>Tulum</span>
+    </mat-list-item>
+  </mat-list>
+</div>
+<h3>Interpolación</h3>
+<div>
+  <mat-list>
+    <mat-list-item>
+      <img mat-line mat-list-avatar src="{{student1.photoURL}}" alt="Profile picture">
+      <span mat-line>{{student1.name}}</span>
+      <span mat-line>{{student1.city}}</span>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <img mat-line mat-list-avatar src="https://www.publicdomainpictures.net/pictures/80000/nahled/vintage-male-profile-silhouette.jpg"
+        alt="Profile picture">
+      <span mat-line>{{student2.name}}</span>
+      <span mat-line>{{student2.city}}</span>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <img mat-line mat-list-avatar src="https://www.publicdomainpictures.net/pictures/80000/nahled/vintage-male-profile-silhouette.jpg"
+        alt="Profile picture">
+      <span mat-line>{{student3.name}}</span>
+      <span mat-line>{{student3.city}}</span>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <img mat-line mat-list-avatar src="https://www.publicdomainpictures.net/pictures/80000/nahled/vintage-male-profile-silhouette.jpg"
+        alt="Profile picture">
+      <span mat-line>{{student4.name}}</span>
+      <span mat-line>{{student4.city}}</span>
+    </mat-list-item>
+  </mat-list>
+</div>
+<h3>NG IF</h3>
+<div>
+  <mat-list>
+    <mat-list-item>
+      <img *ngIf="student1.photoURL" mat-line mat-list-avatar [src]="student1.photoURL" alt="Profile picture">
+      <img *ngIf="!student1.photoURL" mat-line mat-list-avatar [src]="DEFAULT_PICTURE" alt="Profile picture">
+      <span mat-line>{{student1.name}}</span>
+      <span mat-line>{{student1.city}}</span>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <img *ngIf="student2.photoURL" mat-line mat-list-avatar [src]="student2.photoURL" alt="Profile picture">
+      <!-- <img *ngIf="!student2.photoURL" mat-line mat-list-avatar [src]="DEFAULT_PICTURE" alt="Profile picture"> -->
+      <span mat-line>{{student2.name}}</span>
+      <span mat-line>{{student2.city}}</span>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <img *ngIf="student3.photoURL" mat-line mat-list-avatar [src]="student3.photoURL" alt="Profile picture">
+      <img *ngIf="!student3.photoURL" mat-line mat-list-avatar [src]="DEFAULT_PICTURE" alt="Profile picture">
+      <span mat-line>{{student3.name}}</span>
+      <span mat-line>{{student3.city}}</span>
+    </mat-list-item>
+  </mat-list>
+</div>
+<h4>NG FOR</h4>
+<div>
+  <mat-list>
+    <mat-list-item *ngFor="let student of studentsList">
+      <img *ngIf="student.photoURL" mat-line mat-list-avatar [src]="student.photoURL" alt="Profile picture">
+      <img *ngIf="!student.photoURL" mat-line mat-list-avatar [src]="DEFAULT_PICTURE" alt="Profile picture">
+      <span mat-line>{{student.name}}</span>
+      <span mat-line>{{student.city}}</span>
+    </mat-list-item>
+  </mat-list>
+</div>
+<h4>Refactorizar</h4>
+<div>
+  <mat-list>
+    <ed-student-item *ngFor="let student of studentsList" [student]="student" (onMouseClick)="onMouseClick($event)"></ed-student-item>
+  </mat-list>
+</div>

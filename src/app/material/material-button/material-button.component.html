@@ -1,0 +1,33 @@
+<h3>Normal buttons</h3>
+<div>
+  <button mat-button>Basic</button>
+  <button mat-button color="primary">Basic primary</button>
+</div>
+
+<h3>Raised buttons / Botones con elevación</h3>
+<div>
+  <!-- Property binding []="var" -->
+  <button mat-raised-button	[disabled]="!frm.valid" (click)="onClick($event)">Basic</button>
+  <button mat-raised-button [disabled]="frm.valid" (click)="onClick($event)">Basic primary</button>
+</div>
+
+<h3>Icon buttons / Botones con iconos</h3>
+<div>
+  <button mat-icon-button>
+    <mat-icon>star</mat-icon>
+  </button>
+
+  <button mat-icon-button color="primary">
+    <mat-icon>grade</mat-icon>
+  </button>
+</div>
+
+<h3>Floating action buttons (FAB)</h3>
+<div>
+  <button mat-fab (click)="onClick($event)">
+    <mat-icon>star</mat-icon>
+  </button>
+  <button mat-fab (click)="onClick($event)">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

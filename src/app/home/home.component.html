@@ -1,0 +1,47 @@
+<div class="card-container" *ngIf="apod">
+  <mat-card class="card-content">
+    <h3>APOD</h3>
+    <h4>Astronomy Picture of the Day</h4>
+    <mat-card-header>
+      <img src="https://media.giphy.com/media/VLRRWXGuwHpny/giphy.gif" alt="Avatar" mat-card-avatar class="">
+      <mat-card-title>{{ apod.title }}</mat-card-title>
+      <mat-card-subtitle>{{ apod.date | date:'fullDate' }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="apod.url" [alt]="apod.title">
+    <mat-card-content>
+      <p>
+        {{ apod.explanation }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="flex-center">
+          <button mat-button><mat-icon>thumb_up_alt</mat-icon>
+          </button>
+          <button mat-button><mat-icon>share</mat-icon></button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div class="flex-center">
+  <mat-spinner *ngIf="!apod && !error"></mat-spinner>
+</div>
+<div *ngIf="error">
+  <mat-card class="card-content">
+    {{ error }}
+  </mat-card>
+</div>
+<!--
+  <div>
+  <div>
+    Sin pipe: {{ apod.title }}
+  </div>
+  <div>
+    Con pipe: {{ apod.title | lowerCase}}
+  </div>
+</div>
+-->
+<!--
+<pre>
+  {{ apod | json }}
+</pre>
+-->

@@ -1,0 +1,32 @@
+<h3>Basic inputs</h3>
+<div>
+  <mat-form-field>
+    <!-- Property binding [attr]="var-->
+    <!-- String default [value]="'Samuel D:'" -->
+    <input matInput type="text" name="" id="" [placeholder]="placeholder.name" [value]="user.name" (keyup)="onKeyUp($event)" (blur)="onBlur($event)">
+    <!-- Two way data binding -->
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" name="" id="" [placeholder]="placeholder.name" [(ngModel)]="user.name" (keyup)="onKeyUp($event)" (blur)="onBlur($event)">
+  </mat-form-field>
+  <pre>
+    {{ user | json}}
+  </pre>
+</div>
+
+<h3>Prefix / Suifix</h3>
+<div>
+  <mat-form-field>
+    <span matPrefix>(+52)&nbsp;</span>
+    <input matInput type="text" placeholder="Phone">
+    <span matSuffix>:)</span>
+  </mat-form-field>
+</div>
+
+<h3></h3>
+<div>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Address">
+    <mat-hint>Street and number</mat-hint>
+  </mat-form-field>
+</div>

@@ -1,0 +1,15 @@
+.card-container {
+  max-width: 85%;
+  margin: 20px auto;
+
+  align-items: center;
+
+  .card-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h3, h4 {
+      text-align: center;
+    }
+  }
+}
